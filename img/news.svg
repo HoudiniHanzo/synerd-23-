@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 552 183" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-84.7011,-541.376)">
+        <g id="Artboard2" transform="matrix(0.672064,0,0,0.566509,73.3643,289.314)">
+            <rect x="16.869" y="444.939" width="820.633" height="322.413" style="fill:none;"/>
+            <g transform="matrix(1.48795,0,0,1.7652,-179.181,-479.116)">
+                <path d="M673.376,685.528L146.038,685.528L277.873,537.139L541.541,537.139L673.376,685.528Z" style="fill:rgb(173,232,180);stroke:rgb(102,104,140);stroke-width:9.76px;"/>
+            </g>
+            <g transform="matrix(5.45786,0,0,6.71508,-994.689,-3515.68)">
+                <text x="223.679px" y="622.415px" style="font-family:'ArialRoundedMTBold', 'Arial Rounded MT Bold', sans-serif;font-size:24.024px;fill:rgb(238,240,146);stroke:rgb(70,75,149);stroke-width:0.82px;stroke-linecap:butt;stroke-miterlimit:2;">NEWS</text>
+            </g>
+        </g>
+    </g>
+</svg>

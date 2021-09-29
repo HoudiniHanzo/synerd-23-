@@ -1,0 +1,102 @@
+/*
+    General CSS
+*/
+body {
+	font-family: 'Times New Roman', Times, serif;
+	background-color: rgb(232, 236, 236);
+    font-size: 20px;
+    color: rgb(71, 64, 60);
+}
+
+#sep_barA {
+    height: 5px; 
+    background-color: rgb(38, 37, 44);
+    border-width: 0;
+    width: 100%;
+}
+
+#sep_barB {
+    height: 1px; 
+    background-color: rgba(255, 255, 255, 0);
+    border-width: 0;
+    width: 100%;
+}
+
+/*
+    Index CSS
+*/
+
+#A1_col1{
+    float: left;
+    width: 45%;
+    padding-bottom: 10px;
+    text-indent: 10px;
+    border-right: 5px solid rgb(38, 37, 44);
+}
+
+#A1_col2 {
+    float: left;
+    width: 50%;
+    padding-top: 80px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+#B1_col1{
+    float: left;
+    width: 45%;
+    text-align: center;
+}
+
+#a_slideshow{
+    border: 7px solid rgb(70, 88, 68);
+}
+
+#B1_col2 {
+    float: left;
+    width: 49%;
+    padding-bottom: 10px;
+    text-indent: 10px;
+    border: 3px solid rgb(38, 37, 44);
+    background-color: rgb(182, 214, 209);
+}
+
+#C1_donate {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+#D1_Desc {
+    float: left;
+    width: 99%;
+    text-indent: 30px;
+    border: 3px solid rgb(38, 37, 44);
+    background-color: rgb(182, 214, 209);
+}
+
+#E1_bot_info {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+/*
+    Registration Form
+*/
+
+#reg_div{
+    text-align:center;
+}
+
+#reg_table {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: aliceblue;
+    border: 3px solid rgb(38, 37, 44);
+}
+
+#req {
+    color: red;
+}

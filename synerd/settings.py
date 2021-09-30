@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'synerd_db',
-        'USER': 'phpmyadmin',
-        'PASSWORD': 'password',
+        'USER': 'thomas',
+        'PASSWORD': '1APassword1',
         'HOST': 'localhost',
         'PORT': '3306'
     }

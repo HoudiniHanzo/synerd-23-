@@ -9,3 +9,6 @@ def a_index(request):
 
 def a_register(request):
     return render(request, 'register.html')
+
+def a_login(request):
+    return render(request, 'login.html')

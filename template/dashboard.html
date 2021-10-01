@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 
 <html lang="zxx">
@@ -9,21 +10,21 @@
   <meta name="description" content="A fake Charity">
   <meta name="author" content="Thomas Vang">
   <!-- Thomas Vang -->
-  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="{% static '/css/main.css'%}">
 
 </head>
 
-<body>
+<body onload="set_slideshow()">
 
   <div id="A1_col1">
-    <img src="img/logo.svg" width="500px">
+    <img src="{% static 'img/logo.svg' %}" width="500px">
   </div>
   <div id="A1_col2">
-    <a href="index.html"><img src="img/home.svg" height="50px"></a>
-    <img src="img/news.svg" height="50px">
-    <img src="img/contact.svg" height="50px">
+    <a href="{% url 'index' %}"><img src="{% static 'img/home.svg' %}" height="50px"></a>
+    <img src="{% static 'img/news.svg' %}" height="50px">
+    <img src="{% static 'img/contact.svg' %}" height="50px">
     <hr id="sep_barA">
-    <h4 style="text-indent: 325px"><a href="login.html">Sign In</a> | <a href="register.html">Join Us</a></h4>
+    <h4 style="text-indent: 325px"><a href="{% url 'login' %}">Sign In</a> | <a href="{% url 'register' %}">Join Us</a></h4>
   </div>
 
   <hr id="sep_barB">
@@ -58,8 +59,8 @@
 
   <!--Javascript Goes Here-->
   <script src="//code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="js/js.js"></script>
-  <script src="js/jqery.js"></script>
+  <script src="{% static 'js/js.js' %}"></script>
+  <script src="{% static 'js/jqery.js' %}"></script>
 
 </body>
 

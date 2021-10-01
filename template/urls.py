@@ -8,6 +8,7 @@ urlpatterns = [
     path('index/', views.a_index, name='index'),
     path('register/', views.a_register, name='register'),
     path('login/', views.a_login, name='login'),
+    path('dashboard/', views.a_login, name='dashboard'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

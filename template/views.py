@@ -12,3 +12,6 @@ def a_register(request):
 
 def a_login(request):
     return render(request, 'login.html')
+
+def a_dashboard(request):
+    return render(request, 'dashboard.html')

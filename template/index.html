@@ -17,12 +17,12 @@
 <body onload="set_slideshow()">
 
   <div id="A1_col1">
-    <img src="img/logo.svg" width="500px">
+    <img src="{% static 'img/logo.svg' %}" width="500px">
   </div>
   <div id="A1_col2">
-    <img src="img/home.svg" height="50px">
-    <img src="img/news.svg" height="50px">
-    <img src="img/contact.svg" height="50px">
+    <img src="{% static 'img/home.svg' %}" height="50px">
+    <img src="{% static 'img/news.svg' %}" height="50px">
+    <img src="{% static 'img/contact.svg' %}" height="50px">
     <hr id="sep_barA">
     <h4 style="text-indent: 325px"><a href="login.html">Sign In</a> | <a href="register.html">Join Us</a></h4>
   </div>
@@ -59,7 +59,7 @@
   <hr id="sep_barA">
 
   <div id="C1_donate">
-    <img src="img/donate.svg" height="150px" style="padding-top: 10px; text-indent: 50px;">
+    <img src="{% static 'img/donate.svg' %}" height="150px" style="padding-top: 10px; text-indent: 50px;">
     <p>Your donation would be greatly appreciated.</p>
   </div>
 
@@ -92,8 +92,8 @@
 
   <!--Javascript Goes Here-->
   <script src="//code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="js/js.js"></script>
-  <script src="js/jqery.js"></script>
+  <script src="{% static 'js/js.js' %}"></script>
+  <script src="{% static 'js/jqery.js"></script>
 
 </body>
 

@@ -6,3 +6,6 @@ from django.http import HttpResponse
 
 def a_index(request):
     return render(request, 'index.html')
+
+def a_register(request):
+    return render(request, 'register.html')

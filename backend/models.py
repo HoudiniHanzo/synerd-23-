@@ -74,7 +74,7 @@ class Subscriber(models.Model):
     subscriberID = models.CharField(max_length=10, primary_key=True)
     username = models.CharField(max_length=25)
     subscriptiontypecode = models.CharField(max_length=25)
-    servicecode = models.ForeignKey(UserInfo, on_delete=CASCADE)
+    servicecode = models.ForeignKey(Service, on_delete=CASCADE)
     requestcode = models.CharField(max_length=25)
     startdate = models.DateField(default=date.today, blank=True, null=True)
     enddate = models.DateField(default=date.today, blank=True, null=True)

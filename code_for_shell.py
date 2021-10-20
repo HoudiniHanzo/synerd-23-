@@ -1,4 +1,4 @@
-from django.db.models.fields import NullBooleanField
+from django.db.models.fields
 from backend.models import *
 
 # Simple Insertion

@@ -1,5 +1,5 @@
 from django.db.models.fields import NullBooleanField
-from polls.models import *
+from backend.models import *
 
 # Simple Insertion
 # Requires the primary key or else will not function correctly.

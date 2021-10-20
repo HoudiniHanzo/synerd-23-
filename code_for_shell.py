@@ -11,7 +11,17 @@ Andy.save()
 Bree.save()
 Cooral.save()
 
+# Deleting Data
+# Adds services1 and services2. Then will delete service1.
+# #
+service1 = Service(servicecode='75469', servicename='UpDown Postal', description='The West Side packaging service.')
+service2 = Service(servicecode='339988', servicename='JiDex Air', description='Some alternative postal service.')
+service1.save()
+service2.save()
+service1.delete()
+
 # Updating Data
+# Updates transfer1's columns to 'Place A' and 'Place B' to 'Place E' and 'Place F'
 # #
 transfer1 = TransferredSubscription(transferID='1212', transfer_from='Place A', transfer_to='Place B', request_date='2005-5-16', transfer_date='2006-6-16', subscriberID='1001')
 transfer2 = TransferredSubscription(transferID='1313', transfer_from='Place C', transfer_to='Place D', request_date='2006-6-17', transfer_date='2006-8-18', subscriberID='3456')
@@ -21,3 +31,10 @@ transfer1.transfer_from = 'Place E'
 transfer1.transfer_to = 'Place F'
 transfer1.save()
 
+# Other Updating
+# Updating Subscribers servicecode for current services.
+# #
+Andy.servicecode = str(service2)
+Bree.servicecode = str(service2)
+Andy.save()
+Bree.save()

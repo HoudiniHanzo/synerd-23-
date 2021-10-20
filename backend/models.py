@@ -1,53 +1,9 @@
 from django.db import models
 from datetime import date
 
+from django.db.models.deletion import CASCADE
+
 # Create your models here.
-
-class TransferredSubscription(models.Model):
-    transferID = models.CharField(max_length=10, primary_key=True)
-    transfer_from = models.CharField(max_length=25)
-    transfer_to = models.CharField(max_length=25)
-    request_date = models.DateField(max_length=25, blank=True, null=True)
-    transfer_date = models.DateField(max_length=25, blank=True, null=True)
-    subscriberID = models.CharField(max_length=10)
-
-    def __str__(self):
-        return self.transferID
-
-class Subscriber(models.Model):
-    subscriberID = models.CharField(max_length=10, primary_key=True)
-    username = models.CharField(max_length=25)
-    subscriptiontypecode = models.CharField(max_length=25)
-    servicecode = models.CharField(max_length=25)
-    requestcode = models.CharField(max_length=25)
-    startdate = models.DateField(default=date.today, blank=True, null=True)
-    enddate = models.DateField(default=date.today, blank=True, null=True)
-    motifofcancellation = models.CharField(max_length=25)
-    beneficiaryID = models.CharField(max_length=10)
-
-    def __str__(self):
-        return self.subscriberID
-
-class Officer(models.Model):
-    officecode = models.CharField(max_length=10, primary_key=True)
-    subscriberID = models.CharField(max_length=10)
-    startdate = models.DateField(default=date.today, blank=True, null=True)
-    enddate = models.DateField(default=date.today, blank=True, null=True)
-
-    def __str__(self):
-        return self.officecode
-
-class OrganizedMember(models.Model):
-    organization_code = models.CharField(max_length=10, primary_key=True)
-    subscriberID = models.CharField(max_length=10)
-    startdate = models.DateField(default=date.today, blank=True, null=True)
-    enddate = models.DateField(default=date.today, blank=True, null=True)
-    nativecountry = models.CharField(max_length=25)
-    citizenship = models.CharField(max_length=25)
-    isdelegate = models.CharField(max_length=25)
-
-    def __str__(self):
-        return self.organization_code
 
 class UserInfo(models.Model):
     username = models.CharField(max_length=25, primary_key=True)
@@ -100,6 +56,51 @@ class Organization(models.Model):
     state = models.CharField(max_length=25)
     zipcode = models.CharField(max_length=25)
     phone_number = models.CharField(max_length=25)
+
+    def __str__(self):
+        return self.organization_code
+class TransferredSubscription(models.Model):
+    transferID = models.CharField(max_length=10, primary_key=True)
+    transfer_from = models.CharField(max_length=25)
+    transfer_to = models.CharField(max_length=25)
+    request_date = models.DateField(max_length=25, blank=True, null=True)
+    transfer_date = models.DateField(max_length=25, blank=True, null=True)
+    subscriberID = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.transferID
+
+class Subscriber(models.Model):
+    subscriberID = models.CharField(max_length=10, primary_key=True)
+    username = models.CharField(max_length=25)
+    subscriptiontypecode = models.CharField(max_length=25)
+    servicecode = models.ForeignKey(UserInfo, on_delete=CASCADE)
+    requestcode = models.CharField(max_length=25)
+    startdate = models.DateField(default=date.today, blank=True, null=True)
+    enddate = models.DateField(default=date.today, blank=True, null=True)
+    motifofcancellation = models.CharField(max_length=25)
+    beneficiaryID = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.subscriberID
+
+class Officer(models.Model):
+    officecode = models.CharField(max_length=10, primary_key=True)
+    subscriberID = models.CharField(max_length=10)
+    startdate = models.DateField(default=date.today, blank=True, null=True)
+    enddate = models.DateField(default=date.today, blank=True, null=True)
+
+    def __str__(self):
+        return self.officecode
+
+class OrganizedMember(models.Model):
+    organization_code = models.CharField(max_length=10, primary_key=True)
+    subscriberID = models.CharField(max_length=10)
+    startdate = models.DateField(default=date.today, blank=True, null=True)
+    enddate = models.DateField(default=date.today, blank=True, null=True)
+    nativecountry = models.CharField(max_length=25)
+    citizenship = models.CharField(max_length=25)
+    isdelegate = models.CharField(max_length=25)
 
     def __str__(self):
         return self.organization_code

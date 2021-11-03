@@ -15,13 +15,3 @@ def a_login(request):
 
 def a_dashboard(request):
     return render(request, 'dashboard.html')
-
-# Serializers
-
-from rest_framework import viewsets
-from backend.models import *
-from .serializers import *
-
-class userinfoView(viewsets.ModelViewSet):
-    queryset = UserInfo.objects.all()
-    serializer_class = userinfoSerializer

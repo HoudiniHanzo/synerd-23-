@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
 from rest_framework import routers
 
+import courses.api.views as aViews
+
 router = routers.DefaultRouter()
-router.register('userinfo', views.userinfoView)
+router.register('userinfo', aViews.userinfoView)
+router.register('subscriber', aViews.subscriberView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +31,5 @@ urlpatterns = [
     path('register/', views.a_register, name='register'),
     path('login/', views.a_login, name='login'),
     path('dashboard/', views.a_dashboard, name='dashboard'),
-    path('userinfo/', include(router.urls))
+    path('api/', include(router.urls), name='api'),
 ]

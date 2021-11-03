@@ -3,7 +3,7 @@ from django.db.models.query import QuerySet
 from rest_framework import viewsets
 from backend.models import *
 from .serializers import *
-from courses.api.serializers import *
+from api.serializers import *
 
 class userinfoView(viewsets.ModelViewSet):
     queryset = UserInfo.objects.all()

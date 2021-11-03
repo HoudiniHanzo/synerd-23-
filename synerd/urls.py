@@ -19,7 +19,7 @@ from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework import routers
 
-import courses.api.views as aViews
+import api.views as aViews
 
 router = routers.DefaultRouter()
 router.register('userinfo', aViews.userinfoView)

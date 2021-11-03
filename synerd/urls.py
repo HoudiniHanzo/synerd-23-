@@ -17,15 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from rest_framework import routers
 
-import api.views as aViews
+import api.urls as apiView
 
-router = routers.DefaultRouter()
-router.register('userinfo', aViews.userinfoView)
-router.register('subscriber', aViews.subscriberView)
-router.register('service', aViews.serviceView)
-router.register('organization', aViews.organizationView)
+#import api.views as aViews
+
+#router = routers.DefaultRouter()
+#router.register('userinfo', aViews.userinfoView)
+#router.register('subscriber', aViews.subscriberView)
+#router.register('service', aViews.serviceView)
+#router.register('organization', aViews.organizationView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,5 +34,5 @@ urlpatterns = [
     path('register/', views.a_register, name='register'),
     path('login/', views.a_login, name='login'),
     path('dashboard/', views.a_dashboard, name='dashboard'),
-    path('api/', include(router.urls), name='api'),
+    path('api/', include(apiView.router.urls), name='api'),
 ]

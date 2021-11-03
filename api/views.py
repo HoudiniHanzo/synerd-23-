@@ -1,5 +1,3 @@
-from django.db.models import query
-from django.db.models.query import QuerySet
 from rest_framework import viewsets
 from backend.models import *
 from .serializers import *

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Oct 19, 2021 at 11:13 PM
--- Server version: 8.0.26-0ubuntu0.20.04.3
--- PHP Version: 7.4.3
+-- Host: localhost
+-- Generation Time: Nov 04, 2021 at 12:25 AM
+-- Server version: 8.0.26
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -107,22 +106,58 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (42, 'Can change service', 11, 'change_service'),
 (43, 'Can delete service', 11, 'delete_service'),
 (44, 'Can view service', 11, 'view_service'),
-(45, 'Can add subscription type', 12, 'add_subscriptiontype'),
-(46, 'Can change subscription type', 12, 'change_subscriptiontype'),
-(47, 'Can delete subscription type', 12, 'delete_subscriptiontype'),
-(48, 'Can view subscription type', 12, 'view_subscriptiontype'),
-(49, 'Can add transferred subscription', 13, 'add_transferredsubscription'),
-(50, 'Can change transferred subscription', 13, 'change_transferredsubscription'),
-(51, 'Can delete transferred subscription', 13, 'delete_transferredsubscription'),
-(52, 'Can view transferred subscription', 13, 'view_transferredsubscription'),
-(53, 'Can add user info', 14, 'add_userinfo'),
-(54, 'Can change user info', 14, 'change_userinfo'),
-(55, 'Can delete user info', 14, 'delete_userinfo'),
-(56, 'Can view user info', 14, 'view_userinfo'),
-(57, 'Can add subscriber', 15, 'add_subscriber'),
-(58, 'Can change subscriber', 15, 'change_subscriber'),
-(59, 'Can delete subscriber', 15, 'delete_subscriber'),
-(60, 'Can view subscriber', 15, 'view_subscriber');
+(45, 'Can add subscriber', 12, 'add_subscriber'),
+(46, 'Can change subscriber', 12, 'change_subscriber'),
+(47, 'Can delete subscriber', 12, 'delete_subscriber'),
+(48, 'Can view subscriber', 12, 'view_subscriber'),
+(49, 'Can add subscription type', 13, 'add_subscriptiontype'),
+(50, 'Can change subscription type', 13, 'change_subscriptiontype'),
+(51, 'Can delete subscription type', 13, 'delete_subscriptiontype'),
+(52, 'Can view subscription type', 13, 'view_subscriptiontype'),
+(53, 'Can add transferred subscription', 14, 'add_transferredsubscription'),
+(54, 'Can change transferred subscription', 14, 'change_transferredsubscription'),
+(55, 'Can delete transferred subscription', 14, 'delete_transferredsubscription'),
+(56, 'Can view transferred subscription', 14, 'view_transferredsubscription'),
+(57, 'Can add user info', 15, 'add_userinfo'),
+(58, 'Can change user info', 15, 'change_userinfo'),
+(59, 'Can delete user info', 15, 'delete_userinfo'),
+(60, 'Can view user info', 15, 'view_userinfo'),
+(61, 'Can add user info', 16, 'add_userinfo'),
+(62, 'Can change user info', 16, 'change_userinfo'),
+(63, 'Can delete user info', 16, 'delete_userinfo'),
+(64, 'Can view user info', 16, 'view_userinfo'),
+(65, 'Can add subscription type', 17, 'add_subscriptiontype'),
+(66, 'Can change subscription type', 17, 'change_subscriptiontype'),
+(67, 'Can delete subscription type', 17, 'delete_subscriptiontype'),
+(68, 'Can view subscription type', 17, 'view_subscriptiontype'),
+(69, 'Can add service', 18, 'add_service'),
+(70, 'Can change service', 18, 'change_service'),
+(71, 'Can delete service', 18, 'delete_service'),
+(72, 'Can view service', 18, 'view_service'),
+(73, 'Can add office', 19, 'add_office'),
+(74, 'Can change office', 19, 'change_office'),
+(75, 'Can delete office', 19, 'delete_office'),
+(76, 'Can view office', 19, 'view_office'),
+(77, 'Can add organization', 20, 'add_organization'),
+(78, 'Can change organization', 20, 'change_organization'),
+(79, 'Can delete organization', 20, 'delete_organization'),
+(80, 'Can view organization', 20, 'view_organization'),
+(81, 'Can add transferred subscription', 21, 'add_transferredsubscription'),
+(82, 'Can change transferred subscription', 21, 'change_transferredsubscription'),
+(83, 'Can delete transferred subscription', 21, 'delete_transferredsubscription'),
+(84, 'Can view transferred subscription', 21, 'view_transferredsubscription'),
+(85, 'Can add subscriber', 22, 'add_subscriber'),
+(86, 'Can change subscriber', 22, 'change_subscriber'),
+(87, 'Can delete subscriber', 22, 'delete_subscriber'),
+(88, 'Can view subscriber', 22, 'view_subscriber'),
+(89, 'Can add officer', 23, 'add_officer'),
+(90, 'Can change officer', 23, 'change_officer'),
+(91, 'Can delete officer', 23, 'delete_officer'),
+(92, 'Can view officer', 23, 'view_officer'),
+(93, 'Can add organized member', 24, 'add_organizedmember'),
+(94, 'Can change organized member', 24, 'change_organizedmember'),
+(95, 'Can delete organized member', 24, 'delete_organizedmember'),
+(96, 'Can view organized member', 24, 'view_organizedmember');
 
 -- --------------------------------------------------------
 
@@ -143,6 +178,13 @@ CREATE TABLE `auth_user` (
   `is_active` tinyint(1) NOT NULL,
   `date_joined` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `auth_user`
+--
+
+INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
+(1, 'pbkdf2_sha256$260000$3xTf782qHkYglT9xNHHiKE$N48vQ0fryleLojLxTYUKyzqW3ugiQUpjJuSSlqIq5VI=', '2021-11-02 20:06:57.511813', 1, 'tom_v', '', '', '', 1, 1, '2021-11-02 20:06:34.604742');
 
 -- --------------------------------------------------------
 
@@ -205,12 +247,20 @@ CREATE TABLE `backend_organization` (
   `description` longtext NOT NULL,
   `date_joined` date DEFAULT NULL,
   `address1` varchar(25) NOT NULL,
-  `address2` varchar(25) NOT NULL,
+  `address2` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `city` varchar(25) NOT NULL,
   `state` varchar(25) NOT NULL,
   `zipcode` varchar(25) NOT NULL,
   `phone_number` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `backend_organization`
+--
+
+INSERT INTO `backend_organization` (`organization_code`, `organization_name`, `description`, `date_joined`, `address1`, `address2`, `city`, `state`, `zipcode`, `phone_number`) VALUES
+('1', 'Secret Place', 'None', '2003-08-05', '555 Pipeton', 'Unit 258', 'GreenyHills', 'OH', '55555', '(321) 123-0987'),
+('2', 'Unknown Palace', 'It has a castle somewhere.', '2001-03-21', '369 Somewhere', 'Apt. 482', 'Aboly', 'UT', '55555', '(712) 555-5555');
 
 -- --------------------------------------------------------
 
@@ -246,8 +296,8 @@ CREATE TABLE `backend_service` (
 --
 
 INSERT INTO `backend_service` (`servicecode`, `servicename`, `description`, `allocation`) VALUES
-('339988', 'JiDex Air', 'Some alternative postal service.', ''),
-('556644', 'Xpress Inc', 'X means excellent!', '');
+('1', 'DiscOne', 'a great one.', '21364'),
+('2', 'ThQtOne', 'another one.', '145877');
 
 -- --------------------------------------------------------
 
@@ -259,22 +309,22 @@ CREATE TABLE `backend_subscriber` (
   `subscriberID` varchar(10) NOT NULL,
   `username` varchar(25) NOT NULL,
   `subscriptiontypecode` varchar(25) NOT NULL,
+  `servicecode` varchar(25) NOT NULL,
   `requestcode` varchar(25) NOT NULL,
   `startdate` date DEFAULT NULL,
   `enddate` date DEFAULT NULL,
   `motifofcancellation` varchar(25) NOT NULL,
-  `beneficiaryID` varchar(10) NOT NULL,
-  `servicecode` varchar(25) NOT NULL
+  `beneficiaryID` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `backend_subscriber`
 --
 
-INSERT INTO `backend_subscriber` (`subscriberID`, `username`, `subscriptiontypecode`, `requestcode`, `startdate`, `enddate`, `motifofcancellation`, `beneficiaryID`, `servicecode`) VALUES
-('1001', 'Andy123', '23', '1001', '2015-04-12', NULL, '', '85006341', '339988'),
-('1002', 'xxBree90xx', '65', '2003', '2011-07-22', '2021-10-20', '', '90045577', '556644'),
-('3456', 'Cooral_l33T', '41', '8009', '2016-09-06', '2020-08-31', 'Did not carry the 1.', '', '339988');
+INSERT INTO `backend_subscriber` (`subscriberID`, `username`, `subscriptiontypecode`, `servicecode`, `requestcode`, `startdate`, `enddate`, `motifofcancellation`, `beneficiaryID`) VALUES
+('1', 'aarondj67', '2300', '369', '7415', '2012-02-07', '2018-05-17', 'quit', ''),
+('112233', 'leejaybird', '1001', '123', '1569', '2016-11-01', NULL, '', ''),
+('2', 'beckygreen963', '159632', '4568', '9651', '2016-01-08', NULL, '', '');
 
 -- --------------------------------------------------------
 
@@ -301,14 +351,6 @@ CREATE TABLE `backend_transferredsubscription` (
   `transfer_date` date DEFAULT NULL,
   `subscriberID` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `backend_transferredsubscription`
---
-
-INSERT INTO `backend_transferredsubscription` (`transferID`, `transfer_from`, `transfer_to`, `request_date`, `transfer_date`, `subscriberID`) VALUES
-('1212', 'Place E', 'Place F', '2005-05-16', '2006-06-16', '1001'),
-('1313', 'Place C', 'Place D', '2006-06-17', '2006-08-18', '3456');
 
 -- --------------------------------------------------------
 
@@ -373,12 +415,21 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (9, 'backend', 'organization'),
 (10, 'backend', 'organizedmember'),
 (11, 'backend', 'service'),
-(15, 'backend', 'subscriber'),
-(12, 'backend', 'subscriptiontype'),
-(13, 'backend', 'transferredsubscription'),
-(14, 'backend', 'userinfo'),
+(12, 'backend', 'subscriber'),
+(13, 'backend', 'subscriptiontype'),
+(14, 'backend', 'transferredsubscription'),
+(15, 'backend', 'userinfo'),
 (5, 'contenttypes', 'contenttype'),
-(6, 'sessions', 'session');
+(6, 'sessions', 'session'),
+(19, 'synerd', 'office'),
+(23, 'synerd', 'officer'),
+(20, 'synerd', 'organization'),
+(24, 'synerd', 'organizedmember'),
+(18, 'synerd', 'service'),
+(22, 'synerd', 'subscriber'),
+(17, 'synerd', 'subscriptiontype'),
+(21, 'synerd', 'transferredsubscription'),
+(16, 'synerd', 'userinfo');
 
 -- --------------------------------------------------------
 
@@ -398,26 +449,25 @@ CREATE TABLE `django_migrations` (
 --
 
 INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
-(1, 'contenttypes', '0001_initial', '2021-10-20 02:39:33.235441'),
-(2, 'auth', '0001_initial', '2021-10-20 02:39:34.251546'),
-(3, 'admin', '0001_initial', '2021-10-20 02:39:34.717306'),
-(4, 'admin', '0002_logentry_remove_auto_add', '2021-10-20 02:39:34.729198'),
-(5, 'admin', '0003_logentry_add_action_flag_choices', '2021-10-20 02:39:34.747527'),
-(6, 'contenttypes', '0002_remove_content_type_name', '2021-10-20 02:39:34.868971'),
-(7, 'auth', '0002_alter_permission_name_max_length', '2021-10-20 02:39:34.957112'),
-(8, 'auth', '0003_alter_user_email_max_length', '2021-10-20 02:39:35.007261'),
-(9, 'auth', '0004_alter_user_username_opts', '2021-10-20 02:39:35.027766'),
-(10, 'auth', '0005_alter_user_last_login_null', '2021-10-20 02:39:35.093891'),
-(11, 'auth', '0006_require_contenttypes_0002', '2021-10-20 02:39:35.106531'),
-(12, 'auth', '0007_alter_validators_add_error_messages', '2021-10-20 02:39:35.125460'),
-(13, 'auth', '0008_alter_user_username_max_length', '2021-10-20 02:39:35.229616'),
-(14, 'auth', '0009_alter_user_last_name_max_length', '2021-10-20 02:39:35.374246'),
-(15, 'auth', '0010_alter_group_name_max_length', '2021-10-20 02:39:35.415962'),
-(16, 'auth', '0011_update_proxy_permissions', '2021-10-20 02:39:35.443788'),
-(17, 'auth', '0012_alter_user_first_name_max_length', '2021-10-20 02:39:35.524538'),
-(18, 'backend', '0001_initial', '2021-10-20 02:39:36.068705'),
-(19, 'sessions', '0001_initial', '2021-10-20 02:39:36.143163'),
-(20, 'backend', '0002_alter_subscriber_servicecode', '2021-10-20 02:40:32.513905');
+(1, 'contenttypes', '0001_initial', '2021-11-02 20:03:16.176160'),
+(2, 'auth', '0001_initial', '2021-11-02 20:03:18.990473'),
+(3, 'admin', '0001_initial', '2021-11-02 20:03:19.935252'),
+(4, 'admin', '0002_logentry_remove_auto_add', '2021-11-02 20:03:19.956954'),
+(5, 'admin', '0003_logentry_add_action_flag_choices', '2021-11-02 20:03:19.972896'),
+(6, 'contenttypes', '0002_remove_content_type_name', '2021-11-02 20:03:20.843581'),
+(7, 'auth', '0002_alter_permission_name_max_length', '2021-11-02 20:03:21.339039'),
+(8, 'auth', '0003_alter_user_email_max_length', '2021-11-02 20:03:21.446251'),
+(9, 'auth', '0004_alter_user_username_opts', '2021-11-02 20:03:21.469525'),
+(10, 'auth', '0005_alter_user_last_login_null', '2021-11-02 20:03:21.664542'),
+(11, 'auth', '0006_require_contenttypes_0002', '2021-11-02 20:03:21.679964'),
+(12, 'auth', '0007_alter_validators_add_error_messages', '2021-11-02 20:03:21.701281'),
+(13, 'auth', '0008_alter_user_username_max_length', '2021-11-02 20:03:21.942060'),
+(14, 'auth', '0009_alter_user_last_name_max_length', '2021-11-02 20:03:22.152485'),
+(15, 'auth', '0010_alter_group_name_max_length', '2021-11-02 20:03:22.208324'),
+(16, 'auth', '0011_update_proxy_permissions', '2021-11-02 20:03:22.242751'),
+(17, 'auth', '0012_alter_user_first_name_max_length', '2021-11-02 20:03:22.518117'),
+(18, 'backend', '0001_initial', '2021-11-02 20:03:23.228251'),
+(19, 'sessions', '0001_initial', '2021-11-02 20:03:23.573517');
 
 -- --------------------------------------------------------
 
@@ -430,6 +480,13 @@ CREATE TABLE `django_session` (
   `session_data` longtext NOT NULL,
   `expire_date` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `django_session`
+--
+
+INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
+('gv1l72uzmiwyx7lyhdrf0ohq0lycbtx0', '.eJxVjMEOwiAQRP-FsyEuIF08eu83EFgWqRpISnsy_rtt0oNeJpN5M_MWPqxL8Wvn2U9JXAWI028WAz257iA9Qr03Sa0u8xTlXpEH7XJsiV-3o_t3UEIv2zrCEMlaxYyAm4LJBOzU5tFYdI4ugBpyRm1NzlafldPJMJDRYcAkPl_YGTdg:1mi03d:_ogn_2dNe2xOlU5A-bqf0Y_GcJ4n34NvHD-ZeEB5S7M', '2021-11-16 20:06:57.525534');
 
 --
 -- Indexes for dumped tables
@@ -582,13 +639,13 @@ ALTER TABLE `auth_group_permissions`
 -- AUTO_INCREMENT for table `auth_permission`
 --
 ALTER TABLE `auth_permission`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `auth_user`
 --
 ALTER TABLE `auth_user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `auth_user_groups`
@@ -612,13 +669,13 @@ ALTER TABLE `django_admin_log`
 -- AUTO_INCREMENT for table `django_content_type`
 --
 ALTER TABLE `django_content_type`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables

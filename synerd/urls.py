@@ -18,15 +18,8 @@ from django.urls import path, include
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+# Importing the api urls.py file.
 import api.urls as apiView
-
-#import api.views as aViews
-
-#router = routers.DefaultRouter()
-#router.register('userinfo', aViews.userinfoView)
-#router.register('subscriber', aViews.subscriberView)
-#router.register('service', aViews.serviceView)
-#router.register('organization', aViews.organizationView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
